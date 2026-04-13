@@ -1,268 +1,1043 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔮 個人化占星週報 W3｜4/6–4/12</title>
+<title>✦ 2026 個人占星週運系統 ✦</title>
 <style>
-:root {
-  --bg:#0d0f14; --card:#13161e; --border:#1e2330;
-  --gold:#f0c040; --gold2:#c8960a; --teal:#4ecdc4;
-  --text:#e8eaf0; --sub:#8892a4; --purple:#9b59b6;
-  --green:#2ecc71; --red:#e74c3c; --blue:#3498db;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;line-height:1.6;}
-.hero{background:linear-gradient(135deg,#1a1030 0%,#0d1a2a 50%,#1a0d20 100%);padding:40px 20px 30px;text-align:center;border-bottom:1px solid var(--border);}
-.hero .week-tag{display:inline-block;background:rgba(240,192,64,.15);border:1px solid var(--gold2);color:var(--gold);font-size:.75rem;padding:4px 12px;border-radius:20px;margin-bottom:12px;letter-spacing:1px;}
-.hero h1{font-size:1.6rem;margin-bottom:6px;background:linear-gradient(90deg,var(--gold),#fff,var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero .subtitle{color:var(--sub);font-size:.85rem;margin-bottom:16px;}
-.hero .profile-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
-.badge{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:.8rem;}
-.badge span{color:var(--gold);}
-.lucky-bar{background:var(--card);border-bottom:1px solid var(--border);padding:16px 20px;}
-.lucky-bar h3{color:var(--gold);font-size:.85rem;margin-bottom:10px;letter-spacing:1px;}
-.lucky-row{display:flex;gap:8px;flex-wrap:wrap;}
-.lucky-item{background:rgba(240,192,64,.08);border:1px solid rgba(240,192,64,.2);border-radius:8px;padding:6px 12px;font-size:.82rem;text-align:center;}
-.lucky-item .lk{color:var(--sub);font-size:.72rem;display:block;}
-.lucky-item .lv{color:var(--gold);font-weight:700;}
-.main{padding:16px;}
-.section-title{font-size:.75rem;color:var(--sub);letter-spacing:2px;text-transform:uppercase;margin:20px 0 10px;}
-/* 評分卡 */
-.scores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.score-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;}
-.score-card .icon{font-size:1.3rem;margin-bottom:4px;}
-.score-card .name{font-size:.72rem;color:var(--sub);margin-bottom:6px;}
-.score-card .stars{font-size:.9rem;letter-spacing:1px;}
-.score-card .tip{font-size:.68rem;color:var(--sub);margin-top:4px;line-height:1.3;}
-/* 重要提示 */
-.alert{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.25);border-radius:10px;padding:14px;margin-bottom:12px;}
-.alert.gold{background:rgba(240,192,64,.08);border-color:rgba(240,192,64,.25);}
-.alert.green{background:rgba(46,204,113,.08);border-color:rgba(46,204,113,.25);}
-.alert.blue{background:rgba(52,152,219,.08);border-color:rgba(52,152,219,.25);}
-.alert-title{font-size:.82rem;font-weight:700;margin-bottom:6px;}
-.alert.gold .alert-title{color:var(--gold);}
-.alert.green .alert-title{color:var(--green);}
-.alert.blue .alert-title{color:var(--blue);}
-.alert p{font-size:.82rem;color:var(--sub);line-height:1.6;}
-/* 每日日曆 */
-.day-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;}
-.day-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-.day-name{font-weight:700;font-size:.9rem;}
-.day-date{font-size:.75rem;color:var(--sub);}
-.day-level{font-size:.72rem;padding:2px 8px;border-radius:10px;}
-.day-level.high{background:rgba(46,204,113,.15);color:var(--green);}
-.day-level.med{background:rgba(240,192,64,.15);color:var(--gold);}
-.day-level.low{background:rgba(231,76,60,.15);color:var(--red);}
-.day-text{font-size:.82rem;color:var(--sub);line-height:1.6;}
-/* 行動清單 */
-.action-list{list-style:none;}
-.action-list li{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;font-size:.83rem;display:flex;gap:10px;}
-.action-list li .ai{font-size:1rem;flex-shrink:0;}
-/* 星象說明 */
-.planet-row{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start;}
-.planet-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.planet-icon.gold{background:rgba(240,192,64,.15);}
-.planet-icon.teal{background:rgba(78,205,196,.15);}
-.planet-icon.purple{background:rgba(155,89,182,.15);}
-.planet-text h4{font-size:.82rem;font-weight:700;margin-bottom:2px;}
-.planet-text p{font-size:.78rem;color:var(--sub);line-height:1.5;}
-.footer{padding:24px 20px;text-align:center;border-top:1px solid var(--border);color:var(--sub);font-size:.75rem;}
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@400;500;700&display=swap');
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --violet: #7c6fa0;
+    --violet-light: #a99fc8;
+    --deep-blue: #0a0e1a;
+    --card-bg: rgba(15, 18, 35, 0.92);
+    --border: rgba(201, 168, 76, 0.3);
+    --text: #e8e0f0;
+    --text-dim: #a09ab8;
+    --green: #5dbf8a;
+    --red: #e07070;
+    --amber: #e0a050;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Serif TC', serif;
+    background: var(--deep-blue);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield */
+  #starfield {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse at center, #0d1530 0%, #050810 100%);
+  }
+  .star {
+    position: absolute; border-radius: 50%;
+    background: white; animation: twinkle linear infinite;
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+
+  .container {
+    position: relative; z-index: 1;
+    max-width: 960px; margin: 0 auto; padding: 20px 16px 60px;
+  }
+
+  /* Header */
+  .site-header {
+    text-align: center; padding: 32px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .site-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(201,168,76,0.5);
+    margin-bottom: 6px;
+  }
+  .site-header .subtitle {
+    color: var(--violet-light);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+  }
+  .site-header .date-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.07);
+  }
+
+  /* Day status banner */
+  .day-banner {
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 22px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.92rem;
+  }
+  .day-banner.monday   { background: rgba(93,191,138,0.12); border: 1px solid rgba(93,191,138,0.3); }
+  .day-banner.saturday { background: rgba(201,168,76,0.10); border: 1px solid var(--border); }
+  .day-banner.sunday   { background: rgba(124,111,160,0.15); border: 1px solid rgba(124,111,160,0.35); }
+  .day-banner.weekday  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .day-banner .icon { font-size: 1.5rem; }
+
+  /* Week nav */
+  .week-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  .week-nav button {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border);
+    color: var(--gold);
+    padding: 6px 14px; border-radius: 8px;
+    cursor: pointer; font-size: 0.82rem;
+    transition: background 0.2s;
+  }
+  .week-nav button:hover { background: rgba(201,168,76,0.22); }
+  .week-nav .week-label {
+    font-size: 0.9rem; color: var(--gold-light);
+    text-align: center; flex: 1;
+  }
+
+  /* Tab bar */
+  .tab-bar {
+    display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .tab-btn {
+    flex: 1; min-width: 90px;
+    padding: 8px 12px; border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(201,168,76,0.06);
+    color: var(--text-dim); cursor: pointer;
+    font-size: 0.8rem; transition: all 0.2s;
+    font-family: 'Noto Serif TC', serif;
+  }
+  .tab-btn:hover { background: rgba(201,168,76,0.14); color: var(--gold); }
+  .tab-btn.active {
+    background: rgba(201,168,76,0.2);
+    color: var(--gold); border-color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Area cards */
+  .area-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    transition: box-shadow 0.2s;
+  }
+  .area-card:hover { box-shadow: 0 4px 30px rgba(201,168,76,0.15); }
+  .area-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px;
+    background: rgba(201,168,76,0.07);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .area-icon { font-size: 1.3rem; }
+  .area-title {
+    font-size: 1rem; color: var(--gold);
+    font-weight: 600; flex: 1;
+  }
+  .area-toggle { color: var(--gold); font-size: 0.8rem; transition: transform 0.2s; }
+  .area-body { padding: 16px 18px; display: block; }
+  .area-body.collapsed { display: none; }
+
+  /* Fields */
+  .field-group { margin-bottom: 14px; }
+  .field-label {
+    font-size: 0.75rem; color: var(--violet-light);
+    letter-spacing: 0.1em; margin-bottom: 5px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .field-label .badge {
+    font-size: 0.65rem; padding: 1px 7px;
+    border-radius: 10px; font-weight: 600;
+  }
+  .badge-mon { background: rgba(93,191,138,0.2); color: #5dbf8a; }
+  .badge-sat { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .badge-any { background: rgba(124,111,160,0.2); color: var(--violet-light); }
+
+  textarea, input[type="text"] {
+    width: 100%; background: rgba(10,14,26,0.8);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; padding: 10px 12px;
+    color: var(--text); font-family: 'Noto Serif TC', serif;
+    font-size: 0.88rem; resize: vertical;
+    transition: border 0.2s;
+    line-height: 1.6;
+  }
+  textarea:focus, input[type="text"]:focus {
+    outline: none; border-color: var(--gold);
+    background: rgba(15,20,40,0.9);
+  }
+  textarea { min-height: 72px; }
+  textarea[readonly], input[readonly] {
+    opacity: 0.75; cursor: default;
+    border-color: rgba(255,255,255,0.06);
+  }
+
+  /* Score selector */
+  .score-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .score-btn {
+    width: 38px; height: 38px; border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: transparent; color: var(--text-dim);
+    cursor: pointer; font-size: 0.88rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s;
+  }
+  .score-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .score-btn.selected { background: var(--gold); color: #111; border-color: var(--gold); font-weight: 700; }
+
+  /* Astrology note strip */
+  .astro-strip {
+    background: rgba(124,111,160,0.13);
+    border-left: 3px solid var(--violet);
+    border-radius: 0 8px 8px 0;
+    padding: 9px 13px;
+    font-size: 0.82rem;
+    color: var(--violet-light);
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+
+  /* Action checklist */
+  .action-list { list-style: none; }
+  .action-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-item input[type="checkbox"] {
+    width: 16px; height: 16px; margin-top: 3px;
+    accent-color: var(--gold); cursor: pointer; flex-shrink: 0;
+  }
+  .action-text { font-size: 0.87rem; color: var(--text); line-height: 1.5; }
+  .action-item.done .action-text { text-decoration: line-through; color: var(--text-dim); }
+
+  /* Progress bar */
+  .progress-wrap { margin: 16px 0 4px; }
+  .progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.73rem; color: var(--text-dim); margin-bottom: 5px;
+  }
+  .progress-bar-bg {
+    height: 6px; background: rgba(255,255,255,0.08);
+    border-radius: 3px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, var(--violet), var(--gold));
+    transition: width 0.4s ease;
+  }
+
+  /* Summary panel */
+  .summary-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px; margin-bottom: 22px;
+  }
+  .summary-panel h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold); font-size: 1rem;
+    margin-bottom: 14px; letter-spacing: 0.08em;
+  }
+  .score-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .score-tile {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 10px 12px;
+  }
+  .score-tile .tile-label { font-size: 0.73rem; color: var(--text-dim); margin-bottom: 4px; }
+  .score-tile .tile-val { font-size: 1.3rem; color: var(--gold); font-weight: 700; }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 24px; border-radius: 10px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.25), rgba(124,111,160,0.25));
+    border: 1px solid var(--gold);
+    color: var(--gold); cursor: pointer;
+    font-size: 0.9rem; font-family: 'Noto Serif TC', serif;
+    transition: all 0.2s; letter-spacing: 0.05em;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(201,168,76,0.4), rgba(124,111,160,0.35));
+    box-shadow: 0 0 18px rgba(201,168,76,0.25);
+  }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 18px; border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--text-dim); cursor: pointer;
+    font-size: 0.82rem; font-family: 'Noto Serif TC', serif;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--violet); color: var(--violet-light); }
+
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+  /* Guide modal */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75); z-index: 100;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #0d1020;
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+    max-width: 560px; width: 100%;
+    max-height: 80vh; overflow-y: auto;
+    position: relative;
+  }
+  .modal-box h3 { color: var(--gold); font-family: 'Cinzel', serif; margin-bottom: 16px; }
+  .modal-box p { font-size: 0.87rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 10px; }
+  .modal-box ul { padding-left: 18px; }
+  .modal-box li { font-size: 0.85rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 4px; }
+  .modal-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; color: var(--text-dim);
+    font-size: 1.4rem; cursor: pointer;
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: rgba(20,25,45,0.95); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 10px 22px; border-radius: 10px;
+    font-size: 0.86rem; z-index: 200;
+    opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+
+  /* History list */
+  .history-list { margin-top: 12px; }
+  .history-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 14px; border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 8px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .history-item:hover { background: rgba(201,168,76,0.09); }
+  .history-item .hw-label { font-size: 0.85rem; color: var(--text); }
+  .history-item .hw-scores { font-size: 0.78rem; color: var(--text-dim); }
+
+  /* Astro event strip */
+  .astro-events {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;
+  }
+  .astro-event {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 20px;
+    border: 1px solid var(--border);
+    background: rgba(201,168,76,0.08);
+    font-size: 0.75rem; color: var(--gold-light);
+  }
+
+  @media(max-width:600px) {
+    .tab-btn { font-size: 0.73rem; padding: 7px 8px; min-width: 70px; }
+    .score-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="week-tag">W3 · 2026年第14週</div>
-  <h1>🔮 個人化占星週報</h1>
-  <div class="subtitle">4月6日（一）— 4月12日（日）</div>
-  <div class="profile-row">
-    <div class="badge">☀️ 太陽 <span>金牛座</span></div>
-    <div class="badge">⬆️ 上升 <span>處女座</span></div>
-    <div class="badge">🌙 月亮 <span>摩羯座</span></div>
+<canvas id="starfield"></canvas>
+
+<div class="container">
+  <!-- Header -->
+  <div class="site-header">
+    <h1>✦ 個人占星週運系統 ✦</h1>
+    <div class="subtitle">PERSONAL ASTROLOGY WEEKLY PLANNER · 2026</div>
+    <div class="date-badge" id="todayBadge"></div>
+  </div>
+
+  <!-- Day banner -->
+  <div class="day-banner" id="dayBanner">
+    <span class="icon" id="bannerIcon"></span>
+    <span id="bannerText"></span>
+  </div>
+
+  <!-- Key astro events this week -->
+  <div class="astro-events" id="astroEvents"></div>
+
+  <!-- Week navigation -->
+  <div class="week-nav">
+    <button onclick="changeWeek(-1)">◀ 上一週</button>
+    <div class="week-label" id="weekLabel"></div>
+    <button onclick="changeWeek(1)">下一週 ▶</button>
+  </div>
+
+  <!-- Tab bar -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('monday', this)">☽ 週一預測</button>
+    <button class="tab-btn" onclick="switchTab('saturday', this)">✦ 週六回饋</button>
+    <button class="tab-btn" onclick="switchTab('summary', this)">◎ 週次總結</button>
+    <button class="tab-btn" onclick="switchTab('history', this)">⊕ 歷史紀錄</button>
+  </div>
+
+  <!-- ======= MONDAY TAB ======= -->
+  <div id="tab-monday">
+    <div id="areas-monday"></div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="saveAll('monday')">💾 儲存本週預測</button>
+      <button class="btn-secondary" onclick="openGuide()">? 使用說明</button>
+    </div>
+  </div>
+
+  <!-- ======= SATURDAY TAB ======= -->
+  <div id="tab-saturday" style="display:none">
+    <div id="areas-saturday"></div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="saveAll('saturday')">💾 儲存週六回饋</button>
+      <button class="btn-secondary" onclick="exportMarkdown()">📋 匯出 Markdown</button>
+    </div>
+  </div>
+
+  <!-- ======= SUMMARY TAB ======= -->
+  <div id="tab-summary" style="display:none">
+    <div class="summary-panel">
+      <h2>☽ 本週各領域回饋評分</h2>
+      <div class="score-grid" id="summaryGrid"></div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>整體準確度</span><span id="avgScore">—</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="avgBar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="summary-panel">
+      <h2>✦ 下週調整建議（AI 彙整）</h2>
+      <div id="nextWeekAdvice" style="font-size:0.88rem;line-height:1.9;color:var(--text-dim)">
+        請先完成週六回饋後，此欄會依據你的評分與備註自動彙整調整方向。
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= HISTORY TAB ======= -->
+  <div id="tab-history" style="display:none">
+    <div class="summary-panel">
+      <h2>⊕ 歷史週次</h2>
+      <div id="historyList"></div>
+    </div>
   </div>
 </div>
 
-<div class="lucky-bar">
-  <h3>✨ 本週幸運元素</h3>
-  <div class="lucky-row">
-    <div class="lucky-item"><span class="lk">幸運色</span><span class="lv">靛藍・象牙白</span></div>
-    <div class="lucky-item"><span class="lk">幸運數字</span><span class="lv">6、14、21</span></div>
-    <div class="lucky-item"><span class="lk">幸運日</span><span class="lv">週三・週四</span></div>
-    <div class="lucky-item"><span class="lk">關鍵詞</span><span class="lv">重生・清晰・展開</span></div>
+<!-- Guide Modal -->
+<div class="modal-overlay" id="guideModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeGuide()">✕</button>
+    <h3>✦ 使用說明</h3>
+    <p><strong style="color:var(--gold)">每週流程</strong></p>
+    <ul>
+      <li>📅 <strong>週日</strong>：更新你的行程與重要事件，讓系統背景資料保持最新。</li>
+      <li>☽ <strong>週一早上</strong>：開啟「週一預測」頁，閱讀每個領域的占星趨勢，在「行動清單」欄勾選或補充本週要做的事。</li>
+      <li>📝 <strong>週二～週五</strong>：隨時在「週一預測」頁補充觀察記錄，不需要每天很長。</li>
+      <li>✦ <strong>週六晚上</strong>：切換到「週六回饋」頁，填寫每個領域的「實際發生了什麼」與 1–5 分評分，以及下週想調整的方向。</li>
+    </ul>
+    <p style="margin-top:12px"><strong style="color:var(--gold)">評分說明</strong></p>
+    <ul>
+      <li>1 分：預測完全不符合實際</li>
+      <li>2 分：方向有點對，但偏差大</li>
+      <li>3 分：大致吻合，細節有差距</li>
+      <li>4 分：非常貼切，小細節略偏</li>
+      <li>5 分：準確度極高</li>
+    </ul>
+    <p style="margin-top:12px"><strong style="color:var(--gold)">資料儲存</strong></p>
+    <p>所有內容儲存在此裝置的瀏覽器 localStorage 中。換裝置或清除瀏覽器資料後不會同步，建議定期使用「匯出 Markdown」備份。</p>
+    <p style="margin-top:12px"><strong style="color:var(--gold)">進度條顏色說明</strong></p>
+    <ul>
+      <li>紫→金漸層：整體週次準確度進度</li>
+      <li>評分越高，進度條越長</li>
+    </ul>
   </div>
 </div>
 
-<div class="main">
+<div class="toast" id="toast"></div>
 
-  <div class="section-title">⚠️ 本週重大提示</div>
+<script>
+// ============================================================
+// DATA: Weekly content (expand by week key)
+// Week key format: YYYY-MM-DD (Monday of that week)
+// ============================================================
+const WEEKLY_CONTENT = {
+  "2026-04-13": {
+    astroEvents: [
+      { icon: "🌑", text: "4/17 牡羊座新月" },
+      { icon: "☿", text: "水星牡羊座（溝通直接）" },
+      { icon: "♃", text: "木星巨蟹座（家庭·學習）" },
+      { icon: "♄", text: "土星牡羊座（自律·重建）" }
+    ],
+    areas: [
+      {
+        id: "job", icon: "💼", title: "找工作機會",
+        trend: "金星–木星六分相帶來積極的人際與職場能量。4/17 牡羊座新月象徵「全新開始」，是設定求職目標的最佳時機。口試結果等待中，這週適合心理調適+資料備戰，而非急著廣投。",
+        actions: [
+          "整理口試後的反思，轉化為自我介紹亮點",
+          "列出目標公司清單（3–5 間）",
+          "更新 LinkedIn 個人資料與履歷",
+          "牡羊新月（4/17）前寫下求職三大心願"
+        ],
+        observe: "這週有沒有收到任何職務相關訊息或人脈主動聯繫？"
+      },
+      {
+        id: "school", icon: "🎓", title: "雙聯學校申請",
+        trend: "口試（4/11–12）已結束，進入等待通知階段。水星在牡羊座有助於清晰地整理思路，適合重新審視備選計畫，以防口試結果不如預期。",
+        actions: [
+          "確認口試結果預計通知時間",
+          "整理口試問題與答案，寫下三點改進方向",
+          "若通過：查詢入學文件清單與截止日期",
+          "若未過：評估下一個報名目標"
+        ],
+        observe: "等待過程中心情如何？有沒有需要提前準備的備案？"
+      },
+      {
+        id: "mother", icon: "🌸", title: "母親",
+        trend: "木星在巨蟹座強調家庭關係與情感連結，這週適合主動關心母親的健康狀況與日常。月亮週中過境巨蟹，情感能量提升。",
+        actions: [
+          "安排一次面對面陪伴或通話",
+          "留意母親是否有需要協助的健康或生活事項",
+          "整理或更新她的醫療紀錄／就診排程"
+        ],
+        observe: "母親這週身體和情緒狀況如何？有沒有需要下週跟進的事？"
+      },
+      {
+        id: "family", icon: "🏠", title: "家庭與居家",
+        trend: "土星在牡羊座鼓勵建立更有秩序的家庭結構。4/13 月亮方形天王星，週一有突發訊息的可能，建議不在今天做重大家庭決定。",
+        actions: [
+          "清理或整理一個讓你感到雜亂的空間",
+          "確認家中近期有無需要安排的行程或事務",
+          "週一避免衝動決定，等週二以後再處理"
+        ],
+        observe: "家中氣氛這週如何？有沒有潛在的緊張點需要注意？"
+      },
+      {
+        id: "health", icon: "🌿", title: "健康與身心",
+        trend: "長途旅行（德國）剛結束，身體需要恢復期。牡羊新月前後能量波動較大，建議保持充足睡眠與規律飲食，避免過度消耗。",
+        actions: [
+          "每天至少 30 分鐘輕度運動（散步、瑜伽）",
+          "睡眠目標：23:30 前入睡",
+          "補充旅行期間可能不足的營養（蔬果、水分）",
+          "評估是否需要健康檢查"
+        ],
+        observe: "旅行後體力完全恢復了嗎？這週哪個時段最容易感到疲累？"
+      },
+      {
+        id: "transport", icon: "🚌", title: "交通與通勤",
+        trend: "4/13 月亮方形天王星，週一交通可能有突發狀況，建議預留緩衝時間。週中趨於平穩。",
+        actions: [
+          "重要行程前 30 分鐘出門",
+          "確認本週是否有需要預訂的交通票務",
+          "準備備用路線"
+        ],
+        observe: "本週是否有交通延誤或突發狀況？哪一天最不順？"
+      },
+      {
+        id: "travel", icon: "✈️", title: "旅遊與國際計畫（巴爾幹）",
+        trend: "德國旅程圓滿成功，五月中旬巴爾幹旅遊是下一個重點。這週適合開始確認機票、住宿、行程細節。木星在巨蟹座對旅遊規劃有利。",
+        actions: [
+          "確認巴爾幹旅遊機票（是否已購？候補？）",
+          "列出目標城市與景點初步清單",
+          "查詢當地入境規定與保險需求",
+          "設定旅遊預算上限"
+        ],
+        observe: "巴爾幹計畫這週推進了多少？有沒有遇到訂票困難？"
+      },
+      {
+        id: "finance", icon: "💰", title: "財務與現金流",
+        trend: "金星–木星六分相對財務面正向，但旅行後可能有待整理的支出。這週適合整理帳目並規劃求職前的現金流計畫。",
+        actions: [
+          "整理德國旅遊花費明細",
+          "評估口試後到找到工作前的現金流計畫",
+          "制定巴爾幹旅遊預算上限",
+          "確認本月帳單與繳費截止日"
+        ],
+        observe: "本週實際收支與預期差多少？哪類支出最容易超出計畫？"
+      },
+      {
+        id: "spiritual", icon: "🙏", title: "禪修、法鼓山與慈濟培訓",
+        trend: "牡羊新月（4/17）結合禪訓營後的沉澱期，是重新設定修行節奏的最佳時機。慈濟培訓持續推進，三月到十月每月皆有訓練。",
+        actions: [
+          "每天 10–15 分鐘靜坐或念佛",
+          "寫下禪訓營後最深的一個領悟",
+          "確認慈濟下次培訓日期與準備事項",
+          "牡羊新月（4/17）前寫下修行三大心願"
+        ],
+        observe: "靜心品質與禪訓前後相比如何？慈濟培訓這週有無新進展？"
+      },
+      {
+        id: "caution", icon: "⚠️", title: "特別注意事項",
+        trend: "4/13（週一）月亮方形天王星：情緒波動與突發訊息風險高，避免重大決策。4/17（週五）牡羊新月：能量全面上升，是求職與新計畫啟動的最佳視窗。",
+        actions: [
+          "週一避免衝動決定，保持觀察",
+          "4/17 新月前寫下本月三個最重要的心願",
+          "為突發訊息預留彈性空間",
+          "確認本週最需要被保護的一個面向"
+        ],
+        observe: "有沒有令你意外的突發事件？哪個預測最準確、哪個需要修正？"
+      }
+    ]
+  }
+};
 
-  <div class="alert gold">
-    <div class="alert-title">⭐ 4/12 金星順行回正——蓄積已久的能量釋放</div>
-    <p>金星自3/1起逆行41天，4月12日（本週日）正式順行。金牛座守護星回正，代表凍結的計畫、人際關係與財務開始解鎖。此日若有口試，是極佳的能量轉捩點。</p>
-  </div>
+// Default template for weeks without content
+function getDefaultContent(weekKey) {
+  return {
+    astroEvents: [
+      { icon: "☽", text: "本週星象（待更新）" }
+    ],
+    areas: WEEKLY_CONTENT["2026-04-13"].areas.map(a => ({
+      ...a,
+      trend: "（本週占星趨勢待填入，請在週一更新）"
+    }))
+  };
+}
 
-  <div class="alert green">
-    <div class="alert-title">🎓 4/11–12 口試窗口：星象支持</div>
-    <p>太陽與水星同在牡羊座，有利於清晰表達與第一印象。木星在雙子座對你的第三宮（溝通）帶來支持。建議4/11前一天（週六）整理思路，4/12金星順行日正式上場，自信展現。</p>
-  </div>
+// ============================================================
+// STATE
+// ============================================================
+let currentWeekKey = getMondayKey(new Date());
+let currentTab = "monday";
 
-  <div class="alert blue">
-    <div class="alert-title">✈️ 返台行程（4/7前）</div>
-    <p>你本週初仍在德國行程尾聲。月亮處女座（本週三）有利收拾整理、回顧旅程。返台後立即進入備考模式，土星在雙魚座提醒紀律與準備的重要性。</p>
-  </div>
+function getMondayKey(date) {
+  const d = new Date(date);
+  const day = d.getDay(); // 0=Sun
+  const diff = (day === 0) ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  return d.toISOString().slice(0, 10);
+}
 
-  <div class="section-title">📊 九大領域週運評分</div>
-  <div class="scores-grid">
-    <div class="score-card">
-      <div class="icon">💼</div>
-      <div class="name">事業求職</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div class="tip">口試週，金星順行加持，全力以赴</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">📚</div>
-      <div class="name">學習考試</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div class="tip">水星牡羊利口頭表達，整理重點</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">💰</div>
-      <div class="name">財務理財</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <div class="tip">金星順行後財務趨穩，勿大支出</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">❤️</div>
-      <div class="name">感情人際</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <div class="tip">返台後重新連結家人朋友</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">🏠</div>
-      <div class="name">家庭母親</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <div class="tip">返台問候，月亮摩羯重視家庭責任</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">💪</div>
-      <div class="name">健康身體</div>
-      <div class="stars">⭐⭐⭐</div>
-      <div class="tip">旅行後注意時差調整與休息</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">✈️</div>
-      <div class="name">旅行交通</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <div class="tip">本週返台，確認行程與班機資訊</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">🧘</div>
-      <div class="name">心靈修行</div>
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <div class="tip">法鼓山禪訓餘韻，持續靜心</div>
-    </div>
-    <div class="score-card">
-      <div class="icon">🌱</div>
-      <div class="name">志工服務</div>
-      <div class="stars">⭐⭐⭐⭐</div>
-      <div class="tip">慈濟培訓準備，土星在雙魚鼓勵服務</div>
-    </div>
-  </div>
+function addDays(dateStr, n) {
+  const d = new Date(dateStr);
+  d.setDate(d.getDate() + n);
+  return d;
+}
 
-  <div class="section-title">📅 每日運勢</div>
+function formatRange(weekKey) {
+  const mon = new Date(weekKey);
+  const sun = addDays(weekKey, 6);
+  const fmt = d => `${d.getMonth()+1}/${d.getDate()}`;
+  return `${mon.getFullYear()} · ${fmt(mon)}（一）─ ${fmt(sun)}（日）`;
+}
 
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週一</span> <span class="day-date">4月6日</span></div>
-      <span class="day-level med">★★★ 平穩</span>
-    </div>
-    <div class="day-text">返台或旅途尾聲。月亮在天蠍座，適合深度整理旅途心得與感受。避免立即做重大決策，讓自己慢慢著陸。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週二</span> <span class="day-date">4月7日</span></div>
-      <span class="day-level med">★★★ 整理</span>
-    </div>
-    <div class="day-text">回到台北後重新安頓。整理旅途照片、記錄感想。月亮射手，精神上渴望自由，但土星提醒你準備口試。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週三</span> <span class="day-date">4月8日</span></div>
-      <span class="day-level high">★★★★ 幸運</span>
-    </div>
-    <div class="day-text">月亮入摩羯（你的本命月亮），精神狀態回歸最佳！適合開始準備口試材料、查閱相關資料。效率極高。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週四</span> <span class="day-date">4月9日</span></div>
-      <span class="day-level high">★★★★ 衝刺</span>
-    </div>
-    <div class="day-text">月亮摩羯持續，加上水星在牡羊，口頭表達能力強。模擬口試練習的最佳日，請家人或朋友協助演練。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週五</span> <span class="day-date">4月10日</span></div>
-      <span class="day-level med">★★★ 調整</span>
-    </div>
-    <div class="day-text">月亮入水瓶，思維更廣、觀點更跳脫。適合思考口試可能被問的「非標準問題」，展現創意思維。早睡，為週末養精蓄銳。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週六</span> <span class="day-date">4月11日</span></div>
-      <span class="day-level high">★★★★★ 口試日</span>
-    </div>
-    <div class="day-text">🎓 口試第一天！月亮水瓶，表現沉著理性。穿著靛藍或深藍色系，展現知性專業形象。保持呼吸平穩，相信自己的準備。</div>
-  </div>
-  <div class="day-card">
-    <div class="day-header">
-      <div><span class="day-name">週日</span> <span class="day-date">4月12日</span></div>
-      <span class="day-level high">★★★★★ 金星順行</span>
-    </div>
-    <div class="day-text">🌟 金星今日順行！若有第二天口試，此日的能量最為有利，展現溫暖、真誠與說服力。今晚可以小小慶祝，無論結果如何都值得。</div>
-  </div>
+// ============================================================
+// localStorage helpers
+// ============================================================
+function lsKey(weekKey, section) { return `oracle_${weekKey}_${section}`; }
 
-  <div class="section-title">✅ 本週行動清單</div>
-  <ul class="action-list">
-    <li><span class="ai">✈️</span><div>確認4/7前返台班機，提早到機場（建議3小時前）</div></li>
-    <li><span class="ai">📋</span><div>4/8（週三）開始整理口試重點：研究計畫、自我介紹、動機說明</div></li>
-    <li><span class="ai">🎤</span><div>4/9（週四）找人模擬口試，練習用中英文各說一遍</div></li>
-    <li><span class="ai">👔</span><div>4/10 準備好口試服裝（靛藍、深藍、象牙白）</div></li>
-    <li><span class="ai">😴</span><div>4/10 晚上10點前就寢，確保充分休息</div></li>
-    <li><span class="ai">🧘</span><div>4/11 口試前做10分鐘冥想（法鼓山禪訓功課）</div></li>
-    <li><span class="ai">🌟</span><div>4/12 金星順行，記錄這一刻的心情，新的篇章開始</div></li>
-  </ul>
+function loadData(weekKey, section) {
+  try { return JSON.parse(localStorage.getItem(lsKey(weekKey, section))) || {}; } catch { return {}; }
+}
 
-  <div class="section-title">🪐 本週重要星象</div>
+function saveData(weekKey, section, data) {
+  localStorage.setItem(lsKey(weekKey, section), JSON.stringify(data));
+}
 
-  <div class="planet-row">
-    <div class="planet-icon gold">♀</div>
-    <div class="planet-text">
-      <h4>金星順行（4/12）— 守護星解凍</h4>
-      <p>金牛座守護星金星自3/1逆行至今，4/12順行。Susan Miller指出金星逆行期不宜開展新計畫、大額消費或重大承諾，逆行結束後這些限制解除。</p>
-    </div>
-  </div>
-  <div class="planet-row">
-    <div class="planet-icon teal">☿</div>
-    <div class="planet-text">
-      <h4>水星在牡羊座 — 思維敏銳、表達直接</h4>
-      <p>水星在牡羊強化口頭表達與快速思考，非常適合口試場景。說話要有自信、直接，避免猶豫拖沓，第一印象關鍵。</p>
-    </div>
-  </div>
-  <div class="planet-row">
-    <div class="planet-icon purple">♃</div>
-    <div class="planet-text">
-      <h4>木星在雙子座 — 學習與溝通的大幸運</h4>
-      <p>木星落在你的第十宮附近，2026年全年持續帶來職涯機遇。雙聯學位口試、求職機會都在木星祝福之下，這是今年最重要的成長機會。</p>
-    </div>
-  </div>
+// ============================================================
+// Render helpers
+// ============================================================
+function getContent() {
+  return WEEKLY_CONTENT[currentWeekKey] || getDefaultContent(currentWeekKey);
+}
 
-</div>
+function renderMondayAreas() {
+  const content = getContent();
+  const monData = loadData(currentWeekKey, "monday");
+  const el = document.getElementById("areas-monday");
+  el.innerHTML = content.areas.map((area, i) => {
+    const checks = monData[area.id + "_checks"] || {};
+    const notes = monData[area.id + "_notes"] || "";
+    const observe = monData[area.id + "_observe"] || "";
+    const completedCount = area.actions.filter((_, ai) => checks[ai]).length;
+    const pct = Math.round(completedCount / area.actions.length * 100);
+    return `
+    <div class="area-card">
+      <div class="area-header" onclick="toggleCard('mc-${i}', 'mt-${i}')">
+        <span class="area-icon">${area.icon}</span>
+        <span class="area-title">${area.title}</span>
+        <span class="area-toggle" id="mt-${i}">▼</span>
+      </div>
+      <div class="area-body" id="mc-${i}">
+        <div class="astro-strip">☽ ${area.trend}</div>
 
-<div class="footer">
-  <p>🔮 依據蘇珊米勒占星方法 · 本命盤：金牛☀️ 處女⬆️ 摩羯🌙</p>
-  <p style="margin-top:4px;">參考來源：Susan Miller AstrologyZone · Jean Meeus天文計算</p>
-</div>
+        <div class="field-group">
+          <div class="field-label">行動清單 <span class="badge badge-mon">週一設定</span></div>
+          <ul class="action-list">
+            ${area.actions.map((a, ai) => `
+              <li class="action-item ${checks[ai] ? 'done' : ''}" id="ai-${area.id}-${ai}">
+                <input type="checkbox" ${checks[ai] ? 'checked' : ''}
+                  onchange="toggleAction('${area.id}', ${ai}, this.checked)">
+                <span class="action-text">${a}</span>
+              </li>
+            `).join("")}
+          </ul>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>完成進度</span><span>${completedCount}/${area.actions.length}</span></div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+          </div>
+        </div>
 
+        <div class="field-group">
+          <div class="field-label">本週觀察重點 <span class="badge badge-any">隨時補充</span></div>
+          <div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:5px">${area.observe}</div>
+          <textarea placeholder="週中隨時記錄觀察…" oninput="autoSaveMon('${area.id}_observe', this.value)">${observe}</textarea>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">補充備注 <span class="badge badge-any">隨時補充</span></div>
+          <textarea placeholder="任何想記錄的想法、感受或資訊…" oninput="autoSaveMon('${area.id}_notes', this.value)">${notes}</textarea>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function renderSaturdayAreas() {
+  const content = getContent();
+  const satData = loadData(currentWeekKey, "saturday");
+  const el = document.getElementById("areas-saturday");
+  el.innerHTML = content.areas.map((area, i) => {
+    const actual = satData[area.id + "_actual"] || "";
+    const score = satData[area.id + "_score"] || 0;
+    const next = satData[area.id + "_next"] || "";
+    return `
+    <div class="area-card">
+      <div class="area-header" onclick="toggleCard('sc-${i}', 'st-${i}')">
+        <span class="area-icon">${area.icon}</span>
+        <span class="area-title">${area.title}</span>
+        <span class="area-toggle" id="st-${i}">▼</span>
+      </div>
+      <div class="area-body" id="sc-${i}">
+        <div class="astro-strip">週一預測回顧：${area.trend.slice(0,60)}…</div>
+
+        <div class="field-group">
+          <div class="field-label">實際發生了什麼？ <span class="badge badge-sat">週六填寫</span></div>
+          <textarea placeholder="用 2–4 句描述這週在此領域最重要的事件或感受…" oninput="autoSaveSat('${area.id}_actual', this.value)">${actual}</textarea>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">預測準確度（1–5 分） <span class="badge badge-sat">週六填寫</span></div>
+          <div class="score-row">
+            ${[1,2,3,4,5].map(n => `
+              <button class="score-btn ${score==n?'selected':''}"
+                onclick="setScore('${area.id}', ${n}, this)">${n}</button>
+            `).join("")}
+            <span style="font-size:0.75rem;color:var(--text-dim);align-self:center;margin-left:4px">
+              ${["","完全不符","偏差大","大致吻合","非常貼切","極準確"][score]||""}
+            </span>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">下週想調整什麼？ <span class="badge badge-sat">週六填寫</span></div>
+          <textarea placeholder="希望下週預測加強、減少或改變的方向…" oninput="autoSaveSat('${area.id}_next', this.value)">${next}</textarea>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function renderSummary() {
+  const content = getContent();
+  const satData = loadData(currentWeekKey, "saturday");
+  const scores = content.areas.map(a => satData[a.id + "_score"] || 0);
+  const filled = scores.filter(s => s > 0);
+  const avg = filled.length ? (filled.reduce((a,b) => a+b, 0) / filled.length).toFixed(1) : "—";
+  const pct = filled.length ? (parseFloat(avg) / 5 * 100) : 0;
+
+  document.getElementById("avgScore").textContent = avg === "—" ? "尚未評分" : `${avg} / 5`;
+  document.getElementById("avgBar").style.width = pct + "%";
+
+  document.getElementById("summaryGrid").innerHTML = content.areas.map((a, i) => {
+    const s = scores[i];
+    const emoji = s >= 4 ? "🟢" : s >= 3 ? "🟡" : s >= 1 ? "🔴" : "⬜";
+    return `<div class="score-tile">
+      <div class="tile-label">${a.icon} ${a.title}</div>
+      <div class="tile-val">${s > 0 ? emoji + " " + s : "—"}</div>
+    </div>`;
+  }).join("");
+
+  // Generate advice
+  const lowAreas = content.areas.filter((a, i) => scores[i] > 0 && scores[i] <= 2).map(a => a.title);
+  const highAreas = content.areas.filter((a, i) => scores[i] >= 4).map(a => a.title);
+  let advice = "";
+  if (lowAreas.length) advice += `🔴 <strong>需加強的領域：</strong>${lowAreas.join("、")}——下週預測將調整這些領域的方向與細節。<br><br>`;
+  if (highAreas.length) advice += `🟢 <strong>準確度高的領域：</strong>${highAreas.join("、")}——維持當前預測風格與力度。<br><br>`;
+  if (!lowAreas.length && !highAreas.length) advice = "請完成週六回饋（1–5 分評分）後，此欄會自動產出下週調整建議。";
+  document.getElementById("nextWeekAdvice").innerHTML = advice;
+}
+
+function renderHistory() {
+  const keys = Object.keys(localStorage)
+    .filter(k => k.startsWith("oracle_") && k.endsWith("_saturday"))
+    .map(k => k.replace("oracle_", "").replace("_saturday", ""))
+    .sort().reverse();
+
+  if (!keys.length) {
+    document.getElementById("historyList").innerHTML =
+      '<p style="color:var(--text-dim);font-size:0.85rem">尚無歷史紀錄。完成第一個週六回饋後將在此顯示。</p>';
+    return;
+  }
+
+  document.getElementById("historyList").innerHTML = keys.map(wk => {
+    const content = WEEKLY_CONTENT[wk] || getDefaultContent(wk);
+    const satData = loadData(wk, "saturday");
+    const scores = content.areas.map(a => satData[a.id + "_score"] || 0).filter(s => s > 0);
+    const avg = scores.length ? (scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(1) : "—";
+    return `<div class="history-item" onclick="jumpToWeek('${wk}')">
+      <span class="hw-label">📅 ${formatRange(wk)}</span>
+      <span class="hw-scores">平均評分 ${avg}</span>
+    </div>`;
+  }).join("");
+}
+
+// ============================================================
+// Actions
+// ============================================================
+function toggleCard(bodyId, toggleId) {
+  const body = document.getElementById(bodyId);
+  const arrow = document.getElementById(toggleId);
+  if (!body) return;
+  const collapsed = body.classList.toggle("collapsed");
+  if (arrow) arrow.textContent = collapsed ? "▶" : "▼";
+}
+
+function toggleAction(areaId, actionIdx, checked) {
+  const monData = loadData(currentWeekKey, "monday");
+  if (!monData[areaId + "_checks"]) monData[areaId + "_checks"] = {};
+  monData[areaId + "_checks"][actionIdx] = checked;
+  saveData(currentWeekKey, "monday", monData);
+  const li = document.getElementById(`ai-${areaId}-${actionIdx}`);
+  if (li) li.classList.toggle("done", checked);
+  showToast("✓ 已更新");
+}
+
+function autoSaveMon(fieldKey, value) {
+  const monData = loadData(currentWeekKey, "monday");
+  monData[fieldKey] = value;
+  saveData(currentWeekKey, "monday", monData);
+}
+
+function autoSaveSat(fieldKey, value) {
+  const satData = loadData(currentWeekKey, "saturday");
+  satData[fieldKey] = value;
+  saveData(currentWeekKey, "saturday", satData);
+}
+
+function setScore(areaId, score, btn) {
+  const satData = loadData(currentWeekKey, "saturday");
+  satData[areaId + "_score"] = score;
+  saveData(currentWeekKey, "saturday", satData);
+  // Update UI
+  btn.closest(".score-row").querySelectorAll(".score-btn").forEach((b, i) => {
+    b.classList.toggle("selected", (i+1) === score);
+  });
+  const label = btn.nextElementSibling || btn.closest(".score-row").querySelector("span");
+  if (label) label.textContent = ["","完全不符","偏差大","大致吻合","非常貼切","極準確"][score] || "";
+  showToast("✓ 評分已儲存");
+}
+
+function saveAll(section) {
+  showToast("💾 已儲存！");
+}
+
+function switchTab(tab, btn) {
+  ["monday","saturday","summary","history"].forEach(t => {
+    document.getElementById("tab-" + t).style.display = t === tab ? "block" : "none";
+  });
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  if (btn) btn.classList.add("active");
+  currentTab = tab;
+  if (tab === "saturday") renderSaturdayAreas();
+  if (tab === "summary") renderSummary();
+  if (tab === "history") renderHistory();
+}
+
+function changeWeek(delta) {
+  const d = new Date(currentWeekKey);
+  d.setDate(d.getDate() + delta * 7);
+  currentWeekKey = getMondayKey(d);
+  updateWeekLabel();
+  renderAstroEvents();
+  renderMondayAreas();
+  if (currentTab === "saturday") renderSaturdayAreas();
+  if (currentTab === "summary") renderSummary();
+}
+
+function jumpToWeek(wk) {
+  currentWeekKey = wk;
+  updateWeekLabel();
+  renderAstroEvents();
+  renderMondayAreas();
+  switchTab("monday", document.querySelector(".tab-btn"));
+}
+
+function updateWeekLabel() {
+  document.getElementById("weekLabel").textContent = formatRange(currentWeekKey);
+}
+
+function renderAstroEvents() {
+  const content = getContent();
+  document.getElementById("astroEvents").innerHTML = content.astroEvents.map(e =>
+    `<div class="astro-event">${e.icon} ${e.text}</div>`
+  ).join("");
+}
+
+function openGuide() { document.getElementById("guideModal").classList.add("open"); }
+function closeGuide() { document.getElementById("guideModal").classList.remove("open"); }
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2000);
+}
+
+function exportMarkdown() {
+  const content = getContent();
+  const monData = loadData(currentWeekKey, "monday");
+  const satData = loadData(currentWeekKey, "saturday");
+  let md = `# 占星週運記錄 ${formatRange(currentWeekKey)}\n\n`;
+  content.areas.forEach(area => {
+    md += `## ${area.icon} ${area.title}\n`;
+    md += `**占星趨勢：** ${area.trend}\n\n`;
+    md += `**實際發生：** ${satData[area.id+"_actual"] || "（未填）"}\n\n`;
+    md += `**準確度：** ${satData[area.id+"_score"] || "—"} / 5\n\n`;
+    md += `**下週調整：** ${satData[area.id+"_next"] || "（未填）"}\n\n---\n\n`;
+  });
+  const blob = new Blob([md], {type: "text/markdown"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `oracle_${currentWeekKey}.md`;
+  a.click();
+  showToast("📋 Markdown 已匯出");
+}
+
+// ============================================================
+// Day banner
+// ============================================================
+function renderDayBanner() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun, 1=Mon, 6=Sat
+  const hour = now.getHours();
+  const banner = document.getElementById("dayBanner");
+  const icon = document.getElementById("bannerIcon");
+  const text = document.getElementById("bannerText");
+
+  banner.className = "day-banner";
+  if (day === 1) {
+    banner.classList.add("monday");
+    icon.textContent = "☽";
+    text.innerHTML = "今天是<strong>週一</strong>——閱讀本週占星預測，設定行動清單，啟動美好的一週！";
+  } else if (day === 6 && hour >= 17) {
+    banner.classList.add("saturday");
+    icon.textContent = "✦";
+    text.innerHTML = "今天是<strong>週六晚上</strong>——是時候切換到「週六回饋」頁，記錄這週的實際經歷了。";
+  } else if (day === 6) {
+    banner.classList.add("saturday");
+    icon.textContent = "✦";
+    text.innerHTML = "今天是<strong>週六</strong>——晚上 17:00 後記得填寫週六回饋，幫助下週預測更精準。";
+  } else if (day === 0) {
+    banner.classList.add("sunday");
+    icon.textContent = "🌙";
+    text.innerHTML = "今天是<strong>週日</strong>——更新你的行程與重要事件，讓明天的週一預測更準確。";
+  } else {
+    const dayNames = ["","一","二","三","四","五","六"];
+    banner.classList.add("weekday");
+    icon.textContent = "📝";
+    text.innerHTML = `今天是<strong>週${dayNames[day]}</strong>——隨時補充「本週觀察重點」，週六晚填寫回饋。`;
+  }
+}
+
+function renderTodayBadge() {
+  const now = new Date();
+  const days = ["日","一","二","三","四","五","六"];
+  document.getElementById("todayBadge").textContent =
+    `${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日（週${days[now.getDay()]}）`;
+}
+
+// ============================================================
+// Starfield
+// ============================================================
+function initStars() {
+  const canvas = document.getElementById("starfield");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.fillStyle = "transparent";
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  // Draw static stars on canvas
+  for (let i = 0; i < 180; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const r = Math.random() * 1.2 + 0.2;
+    const alpha = Math.random() * 0.7 + 0.2;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.fill();
+  }
+  // Add a few golden stars
+  for (let i = 0; i < 12; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    ctx.beginPath();
+    ctx.arc(x, y, 1.5, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(201,168,76,0.6)`;
+    ctx.fill();
+  }
+}
+
+window.addEventListener("resize", initStars);
+
+// ============================================================
+// INIT
+// ============================================================
+window.onload = function() {
+  initStars();
+  renderTodayBadge();
+  renderDayBanner();
+  updateWeekLabel();
+  renderAstroEvents();
+  renderMondayAreas();
+
+  // Close modal on overlay click
+  document.getElementById("guideModal").addEventListener("click", function(e) {
+    if (e.target === this) closeGuide();
+  });
+};
+</script>
 </body>
 </html>
