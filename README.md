@@ -1,6 +1,7 @@
 # oracle-weekly-forecast
 
 個人化占星週報 2026（十二宮位版），對應使用者的太陽、上升與生命靈數，產生每一週的十二宮運勢、幸運元素與每日提醒。
+https://stella98052.github.io/oracle-multi/
 
 ## 功能特色
 
