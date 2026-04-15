@@ -285,19 +285,22 @@ function transitsInHouse(houseNum){
 }
 function transitNoteHtml(houseNum){
   var ts = transitsInHouse(houseNum);
-  if(!ts.length) return '';
+  var title = LANG==='zh' ? ('第'+houseNum+'宮：'+AREAS_ZH[houseNum-1]+' ★★★★★') : ('H'+houseNum+': '+AREAS_EN[houseNum-1]+' ★★★★★');
+  if(!ts.length){
+    return '<div style="background:rgba(201,168,76,.08);border-left:3px solid var(--gold2);border-radius:0 7px 7px 0;padding:9px 12px;margin-bottom:10px;font-size:.84rem;line-height:1.75"><span style="color:var(--gold2);font-weight:700">'+title+'</span><div style="margin-top:4px;color:var(--vl)">'+(LANG==='zh'?'本週此宮無主要行運落點。':'No major transit falls in this house this week.')+'</div></div>';
+  }
   var lines='';
   for(var i=0;i<ts.length;i++){
     var t=ts[i];
     var pname=LANG==='zh'?t.name_zh:t.name_en;
     var pmsg=LANG==='zh'?(t.msg_zh||''):(t.msg_en||'');
     if(LANG==='zh'){
-      lines+='<div style="margin-bottom:6px"><span style="color:var(--gold2);font-weight:700">第'+houseNum+'宮：'+(AREAS_ZH[houseNum-1])+' ★★★★★</span><br><span style="color:var(--gold);font-weight:700">🪐 '+pname+'</span> 行運此宮，'+pmsg+'</div>';
+      lines+='<div style="margin-top:6px"><span style="color:var(--gold);font-weight:700">🪐 '+pname+'</span> 行運此宮，'+pmsg+'</div>';
     } else {
-      lines+='<div style="margin-bottom:6px"><span style="color:var(--gold2);font-weight:700">H'+houseNum+': '+(AREAS_EN[houseNum-1])+' ★★★★★</span><br><span style="color:var(--gold);font-weight:700">🪐 '+pname+'</span> transits here — '+pmsg+'</div>';
+      lines+='<div style="margin-top:6px"><span style="color:var(--gold);font-weight:700">🪐 '+pname+'</span> transits here — '+pmsg+'</div>';
     }
   }
-  return '<div style="background:rgba(201,168,76,.08);border-left:3px solid var(--gold2);border-radius:0 7px 7px 0;padding:9px 12px;margin-bottom:10px;font-size:.82rem;line-height:1.75">'+lines+'</div>';
+  return '<div style="background:rgba(201,168,76,.08);border-left:3px solid var(--gold2);border-radius:0 7px 7px 0;padding:9px 12px;margin-bottom:10px;font-size:.84rem;line-height:1.75"><span style="color:var(--gold2);font-weight:700">'+title+'</span>'+lines+'</div>';
 }
 function houseOfLon(lon, ascDeg) {
   var rel = ((lon - ascDeg) % 360 + 360) % 360;
